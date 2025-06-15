@@ -78,14 +78,17 @@ abstract class CountBracketsTask : DefaultTask() {
             var total_square = 0
 
             counts.entries.forEach { (file, bracketsCount) ->
-                out.write("==============================\n")
-                out.write("$file\n\n")
-                out.write(bracketsCountToString(bracketsCount))
-                total_curly += bracketsCount.curly
-                total_angle += bracketsCount.angle
-                total_square += bracketsCount.square
-                total_parentheses = bracketsCount.parentheses
-                out.write("\n")
+                val string = bracketsCountToString(bracketsCount)
+                if (string != "") {
+                    out.write("==============================\n")
+                    out.write("$file\n\n")
+                    out.write(string)
+                    total_curly += bracketsCount.curly
+                    total_angle += bracketsCount.angle
+                    total_square += bracketsCount.square
+                    total_parentheses += bracketsCount.parentheses
+                    out.write("\n")
+                }
             }
 
             out.write("==============================\n")

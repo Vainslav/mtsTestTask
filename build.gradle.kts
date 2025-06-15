@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "pumpkingseeds"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -29,7 +29,7 @@ publishing {
         create<MavenPublication>("pluginMaven") {
             groupId = "pumpkingseeds"
             artifactId = "brackets-counter"
-            version = "1.0-SNAPSHOT"
+            version = "1.0.0"
 
             pom {
                 packaging = "pom"
